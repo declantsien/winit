@@ -486,7 +486,7 @@ declare_class!(
             }
             let was_in_preedit = self.state.ime_state == ImeState::Preedit;
 
-            let characters = get_characters(event, false);
+	    let characters = get_characters(event, event_mods(event).alt());
             self.state.forward_key_to_app = false;
 
             // The `interpretKeyEvents` function might call
